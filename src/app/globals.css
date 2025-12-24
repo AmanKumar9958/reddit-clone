@@ -24,3 +24,53 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* src/app/globals.css */
+@layer utilities {
+  /* Custom thin scrollbar for the sidebar */
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #343536; /* Dark gray thumb */
+    border-radius: 20px;
+    border: 2px solid #1A1A1B; /* Padding around thumb */
+  }
+}
+
+
+/* src/app/globals.css */
+@layer utilities {
+  .custom-scrollbar {
+    /* 1. Define the width so layout doesn't jump */
+    scrollbar-width: thin; 
+    scrollbar-color: transparent transparent; /* Firefox default: hidden */
+  }
+
+  /* Webkit browsers (Chrome, Edge, Safari) */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hidden by default */
+    border-radius: 20px;
+    border: 2px solid #1A1A1B; /* Matches bg color to create padding effect */
+  }
+
+  /* 2. SHOW the scrollbar only when hovering over the container */
+  .custom-scrollbar:hover {
+    scrollbar-color: #343536 transparent; /* Firefox hover */
+  }
+
+  .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #343536; /* Chrome/Edge hover: Dark Gray */
+  }
+}
