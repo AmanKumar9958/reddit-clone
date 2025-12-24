@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Reddit Clone
+
+A full-stack Reddit clone built with Next.js, React, and modern web technologies. This project demonstrates a social media platform where users can view posts, interact with content, and experience a Reddit-like interface.
+
+## Features
+
+- **Modern UI**: Responsive design with a clean, Reddit-inspired layout.
+- **Component-Based Architecture**: Modular React components for easy maintenance and scalability.
+- **Sidebar Navigation**: Left and right sidebars for navigation and additional content.
+- **Post Feed**: Dynamic post cards displaying post data.
+- **Context API**: Global state management for sidebar toggling and other UI states.
+- **Next.js Routing**: File-based routing for pages and layouts.
+
+## Project Structure
+
+```
+.
+├── public/                  # Static assets (images, icons, etc.)
+├── src/
+│   ├── app/
+│   │   ├── globals.css      # Global styles
+│   │   ├── layout.jsx       # Main layout component
+│   │   └── page.jsx         # Home page
+│   ├── components/
+│   │   ├── Navbar.jsx       # Top navigation bar
+│   │   ├── PostCard.jsx     # Individual post card component
+│   │   ├── SidebarLeft.jsx  # Left sidebar
+│   │   ├── SidebarRight.jsx # Right sidebar
+│   │   └── index.js         # Component exports
+│   ├── context/
+│   │   └── SidebarContext.js# React Context for sidebar state
+│   └── data/
+│       └── post.js          # Mock post data
+├── eslint.config.mjs        # ESLint configuration
+├── jsconfig.json            # JS project configuration
+├── next.config.mjs          # Next.js configuration
+├── package.json             # Project metadata and dependencies
+├── postcss.config.mjs       # PostCSS configuration
+└── README.md                # Project documentation
+```
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. **Clone the repository:**
+	```bash
+	git clone <repository-url>
+	cd reddit-clone
+	```
+2. **Install dependencies:**
+	```bash
+	npm install
+	# or
+	yarn install
+	```
+3. **Run the development server:**
+	```bash
+	npm run dev
+	# or
+	yarn dev
+	```
+4. **Open in browser:**
+	Visit [http://localhost:3000](http://localhost:3000) to view the app.
+
+### Build for Production
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Files and Folders
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **src/app/layout.jsx**: Main layout, includes Navbar and sidebars.
+- **src/app/page.jsx**: Home page, renders the post feed.
+- **src/components/**: All UI components (Navbar, PostCard, Sidebars).
+- **src/context/SidebarContext.js**: Provides sidebar open/close state.
+- **src/data/post.js**: Contains mock post data for the feed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization
 
-## Learn More
+- **Add Posts**: Edit `src/data/post.js` to add or modify posts.
+- **UI Changes**: Update components in `src/components/` for custom styles or features.
+- **Sidebar Content**: Modify `SidebarLeft.jsx` and `SidebarRight.jsx` for navigation or widgets.
 
-To learn more about Next.js, take a look at the following resources:
+## Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` – Start development server
+- `npm run build` – Build for production
+- `npm start` – Start production server
+- `npm run lint` – Run ESLint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Technologies Used
 
-## Deploy on Vercel
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [ESLint](https://eslint.org/)
+- [PostCSS](https://postcss.org/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+**Note:** This is a demo project and does not include backend functionality such as authentication, posting, or commenting. You can extend it by integrating a backend of your choice.
