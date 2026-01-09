@@ -29,7 +29,7 @@ const CommunityItem = ({ icon, name, members }) => {
 const SidebarRight = () => {
   return (
     // Fixed container on the right, hidden on smaller screens
-    <aside className="hidden w-80 min-w-[300px] flex-col justify-between py-2 pl-4 pr-4 lg:flex sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto thin-scrollbar">
+    <aside className="hidden w-80 min-w-75 flex-col justify-between py-2 pl-4 pr-4 lg:flex sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto thin-scrollbar">
       
       {/* 1. POPULAR COMMUNITIES SECTION */}
       <div className="rounded-md border border-[#000000] bg-[#000000] p-4">

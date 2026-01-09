@@ -23,6 +23,7 @@ import { BsReddit } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 
 import { useSidebar } from "@/context/SidebarContext"; // Import hook
+import ToggleSidebar from "./ToggleSidebar";
 
 // ... keep your helper components (SidebarLink, SidebarHeader, CommunityLink) ...
 const SidebarLink = ({ icon, text, isActive }) => {
@@ -79,17 +80,13 @@ const SidebarLeft = () => {
             )}
 
             {/* MAIN SIDEBAR */}
-            <aside 
-                className={`
-                    custom-scrollbar 
-                    border-r border-[#343536] bg-[#0E1113] py-4 
-                    
-                    /* Desktop Styles (unchanged) */
-                    md:sticky md:top-16 md:h-[calc(100vh-4rem)] md:block md:w-64 md:z-0
-                    
-                    /* Mobile Styles (Dynamic) */
-                    fixed top-0 left-0 h-full w-[280px] z-50 transition-transform duration-300 ease-in-out
-                    ${isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+            <aside
+                className={`custom-scrollbar bg-[#0E1113] py-4 transition-all duration-300 ease-in-out
+                    fixed top-0 left-0 z-50 h-full w-[280px] border-r border-[#343536]
+                    md:sticky md:top-16 md:h-[calc(100vh-4rem)] md:overflow-hidden
+                    ${isOpen
+                        ? "translate-x-0 md:translate-x-0 md:w-64"
+                        : "-translate-x-full md:-translate-x-full md:w-0 md:border-transparent"}
                 `}
             >
                 {/* Close Button for Mobile (Optional, adds clarity) */}
@@ -111,6 +108,13 @@ const SidebarLeft = () => {
                      </div>
                 </div>
             </aside>
+            <div
+                className={`hidden md:block fixed top-24 z-60 transition-all duration-300 hover:cursor-pointer ${
+                    isOpen ? "left-64" : "left-4"
+                }`}
+            >
+                <ToggleSidebar />
+            </div>
         </>
     );
 };
